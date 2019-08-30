@@ -38,6 +38,7 @@ export class TableComponent implements OnInit {
   collectionSize = -1;
   searchTerm = '';
   displayObjects: any[] = [];
+  arst = 'a';
 
   get PaginationObjects(): any[] {
     return this.displayObjects
