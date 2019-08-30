@@ -1,0 +1,12 @@
+<div style="display: block; margin: auto; width: 50%">
+    <canvas baseChart
+                [data]="doughnutChartData"
+                [labels]="doughnutChartLabels"
+                [chartType]="doughnutChartType"
+                [options] = "chartOptions">
+    </canvas>
+  </div>
+<br />
+
+<app-table [type]="this.constructor.name" [objects]="users"></app-table>
+

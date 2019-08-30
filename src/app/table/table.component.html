@@ -1,0 +1,30 @@
+<div class="form-group form-inline">
+  Full text search: <input class="form-control ml-2" type="text" name="searchTerm" [(ngModel)]="searchTerm" (keyup)="search()"/>
+</div>
+
+<div class="overflow-auto" style="max-height: 500px">
+<table class="table table-striped">
+  <thead>
+  <tr><th *ngFor="let header of tableHeaders" scope="col" [sortable]="header" (sort)="onSort($event)">{{header}}</th></tr>
+</thead>
+<tbody>
+  <tr *ngFor="let row of PaginationObjects">
+      <td *ngFor="let col of tableHeaders" scope="row">
+        <ngb-highlight [result]="row[col]" [term]="searchTerm"></ngb-highlight>
+      </td>
+  </tr>
+</tbody>
+</table>
+</div>
+
+<div class="d-flex justify-content-between p-2">
+  <ngb-pagination [collectionSize]="collectionSize" [(page)]="page" [(pageSize)]="pageSize">
+  </ngb-pagination>
+
+  <select class="custom-select" style="width: auto" [(ngModel)]="pageSize">
+    <option [ngValue]="5">5 items per page</option>
+    <option [ngValue]="10">10 items per page</option>
+    <option [ngValue]="15">15 items per page</option>
+  </select>
+
+</div>

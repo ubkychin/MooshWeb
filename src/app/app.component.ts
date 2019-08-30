@@ -1,4 +1,8 @@
 import { Component } from '@angular/core';
+import { NgModule } from '@angular/core';
+
+import { HttpClientModule } from '@angular/common/http';
+
 
 @Component({
   selector: 'app-root',
@@ -8,3 +12,11 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'MooshWeb';
 }
+
+@NgModule({
+  imports: [
+    HttpClientModule,
+  ],
+})
+
+export class AppModule { }

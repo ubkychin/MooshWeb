@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="row">
+<div class="col">
+  <canvas baseChart
+              [data]="doughnutChartData"
+              [labels]="doughnutChartLabels"
+              [chartType]="doughnutChartType"
+              [options] = "doughnutChartOptions">
+  </canvas>
+</div>
+<div class="col">
+  <canvas baseChart
+              [datasets]="barChartData"
+              [labels]="barChartLabels"
+              [chartType]="barChartType"
+              [options] = "barChartOptions"
+              [colors] ="barChartColours">
+  </canvas>
+</div>
+</div>
+</div>
+<br />
+
+<div>
+<button class="btn btn-primary" (click) = "toggleOption()">Show {{chartOption === 'selected' ? 'cooked' : 'selected'}} Foods</button>
+<span><label>Min Quantity to Chart<input [(ngModel)]="chartMinQty" placeholder="minQty" (change)="minQtyChange(value)"></label></span>
+</div>
+
+<app-table [type]="this.constructor.name" [objects]="foodUsages" [tableHeaders]="headers"></app-table>
