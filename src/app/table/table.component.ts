@@ -110,7 +110,6 @@ export class TableComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log(this.objects);
     if (!this.objects || this.objects.length < 1) {
       console.log('undefined');
       this._objects.subscribe(x => this.update());
@@ -121,9 +120,10 @@ export class TableComponent implements OnInit {
   }
 
   update() {
-    // this.getHeaders();
+    this.getHeaders();
     this.collectionSize = this.objects.length;
     this.displayObjects = this.objects;
+    console.log(this.tableHeaders);
   }
 
   getHeaders() {
