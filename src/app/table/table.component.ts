@@ -16,7 +16,7 @@ export class TableComponent implements OnInit {
   // @Input() objects: any[] = [];
   @Input() tableHeaders: string[] = [];
   rows: any[] = [];
-  private _type = 'hello';
+  @Input() detail: string;
 
   // initialize a private variable _data, it's a BehaviorSubject
   private _objects = new BehaviorSubject<any[]>([]);
@@ -45,21 +45,7 @@ export class TableComponent implements OnInit {
       .slice((this.page - 1) * this.pageSize, (this.page - 1) * this.pageSize + this.pageSize);
   }
 
-  @Input()
-  set type(value) {
-    // set the latest value for _data BehaviorSubject
-    this._type = value;
-  }
-
-  get type() {
-    // get the latest value from _data BehaviorSubject
-    return this._type;
-  }
-
-
-
-  constructor(private pipe: DecimalPipe) {
-  }
+  constructor(private pipe: DecimalPipe) {}
 
   @ViewChildren(NgbdSortableHeaderDirective) headers: QueryList<NgbdSortableHeaderDirective>;
 
@@ -110,6 +96,9 @@ export class TableComponent implements OnInit {
   }
 
   ngOnInit() {
+    console.log(this.detail);
+    console.log(this._objects);
+    console.log(this.tableHeaders);
     if (!this.objects || this.objects.length < 1) {
       console.log('undefined');
       this._objects.subscribe(x => this.update());
@@ -131,6 +120,15 @@ export class TableComponent implements OnInit {
       this.tableHeaders = Object.keys(this.objects[0]);
       console.log(this.tableHeaders);
     }
+  }
+
+  public rowClicked(event: any) {
+    let node = event.target;
+    while (node.nodeName !== 'TR') {
+      node = node.parentNode;
+    }
+
+    console.log(node.title);
   }
 
 }

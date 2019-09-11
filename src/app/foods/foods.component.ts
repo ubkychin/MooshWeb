@@ -10,9 +10,10 @@ import { ChartDataSets, ChartType } from 'chart.js';
 })
 
 export class FoodsComponent implements OnInit {
+  detailComponent = 'foodDetail';
   foods: Food[] = [];
   selectedFoods: SelectedFood[] = [];
-  foodUsages: FoodUsage[] =[];
+  foodUsages: FoodUsage[] = [];
   headers: string[] = ['id', 'name', 'selectedQuantity', 'cookedQuantity'];
 
   page = 1;

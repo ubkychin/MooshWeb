@@ -26,4 +26,4 @@
 <span><label>Min Quantity to Chart<input [(ngModel)]="chartMinQty" placeholder="minQty" (change)="minQtyChange(value)"></label></span>
 </div>
 
-<app-table [type]="this.constructor.name" [objects]="foodUsages" [tableHeaders]="headers"></app-table>
+<app-table [detail]="detailComponent" [objects]="foodUsages" [tableHeaders]="headers"></app-table>

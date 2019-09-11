@@ -1,0 +1,18 @@
+<div *ngIf="food && usage">
+  <table class = "table table-striped">
+    <thead>
+      <th><h1>{{food.name}}</h1></th>
+    </thead>
+    <tbody>
+    <tr><th>Id: </th><td>{{food.id}}</td></tr>
+    <tr><th>Name: </th><td>{{food.name}}</td></tr>
+    <tr><th>Sugar Content:</th><td>{{food.sugarContent}}</td></tr>
+    <tr><th>Category: </th><td>{{food.categoryName}}</td></tr>
+    <tr><th>Location: </th><td>{{food.locationName}}</td></tr>
+    <tr><th>Selected: </th><td>{{usage.selectedQuantity}}</td></tr>
+    <tr><th>Cooked: </th><td>{{usage.cookedQuantity}}</td></tr>
+  </tbody>
+  </table>
+</div>
+
+<button (click) = "goBack();">Back</button><button [routerLink]="['/foodDetail/10']">Next</button>

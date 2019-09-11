@@ -14,6 +14,7 @@ import { FoodsComponent } from './foods/foods.component';
 import { TableComponent } from './table/table.component';
 import { NgbdSortableHeaderDirective } from './sortable.directive';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { FoodDetailComponent } from './food-detail/food-detail.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     TableComponent,
     NgbdSortableHeaderDirective,
     DashboardComponent,
+    FoodDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +36,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     FormsModule,
     ChartsModule
   ],
-  providers: [],
+  providers: [Location],
   bootstrap: [AppComponent],
 })
 

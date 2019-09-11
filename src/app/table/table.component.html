@@ -8,7 +8,7 @@
   <tr><th *ngFor="let header of tableHeaders" scope="col" [sortable]="header" (sort)="onSort($event)">{{header}}</th></tr>
 </thead>
 <tbody>
-  <tr *ngFor="let row of PaginationObjects">
+  <tr *ngFor="let row of PaginationObjects" scope="row" [title]="row['id']" (click)="rowClicked($event);" [routerLink]="['/'+ detail, row['id']]">
       <td *ngFor="let col of tableHeaders" scope="row">
         <ngb-highlight [result]="row[col]" [term]="searchTerm"></ngb-highlight>
       </td>
