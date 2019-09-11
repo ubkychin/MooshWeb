@@ -11,6 +11,7 @@ import { TableComponent } from '../table/table.component';
 })
 
 export class UsersComponent implements OnInit {
+  detailComponent = 'userDetail';
   users: User[] = [];
   public doughnutChartLabels = [];
   public doughnutChartData = [1, 1, 1, 1, 1, 1, 1, 1, 1,  1, 1 , 1, 1, 1];
