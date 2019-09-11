@@ -13,8 +13,6 @@ import { CommonModule } from '@angular/common';
 import { ChartsModule } from 'ng2-charts';
 import { FoodsComponent } from './foods/foods.component';
 import { TableComponent } from './table/table.component';
-import { TestComponent } from './test/test.component';
-import { TesttableComponent } from './testtable/testtable.component';
 import { NgbdSortableHeaderDirective } from './sortable.directive';
 import { DashboardComponent } from './dashboard/dashboard.component';
 
@@ -26,8 +24,6 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     UsersbootstrapComponent,
     FoodsComponent,
     TableComponent,
-    TestComponent,
-    TesttableComponent,
     NgbdSortableHeaderDirective,
     DashboardComponent,
   ],
