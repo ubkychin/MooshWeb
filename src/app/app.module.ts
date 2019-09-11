@@ -8,7 +8,6 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { UsersComponent } from './users/users.component';
 import { UserDetailComponent } from './user-detail/user-detail.component';
-import { UsersbootstrapComponent } from './usersbootstrap/usersbootstrap.component';
 import { CommonModule } from '@angular/common';
 import { ChartsModule } from 'ng2-charts';
 import { FoodsComponent } from './foods/foods.component';
@@ -21,7 +20,6 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     AppComponent,
     UsersComponent,
     UserDetailComponent,
-    UsersbootstrapComponent,
     FoodsComponent,
     TableComponent,
     NgbdSortableHeaderDirective,
