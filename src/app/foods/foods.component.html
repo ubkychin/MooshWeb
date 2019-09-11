@@ -23,7 +23,7 @@
 
 <div>
 <button class="btn btn-primary" (click) = "toggleOption()">Show {{chartOption === 'selected' ? 'cooked' : 'selected'}} Foods</button>
-<span><label>Min Quantity to Chart<input [(ngModel)]="chartMinQty" placeholder="minQty" (change)="minQtyChange(value)"></label></span>
+<span><label>Min Quantity to Chart<input [(ngModel)]="chartMinQty" placeholder="minQty" (change)="minQtyChange()"></label></span>
 </div>
 
 <app-table [detail]="detailComponent" [objects]="foodUsages" [tableHeaders]="headers"></app-table>
