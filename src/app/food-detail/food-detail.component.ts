@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Food, FoodUsage } from '../classes/food';
 import { FoodService } from '../food.service';
-import { ActivatedRoute } from '@angular/router';
-import { Location } from '@angular/common';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Location, DecimalPipe } from '@angular/common';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -16,14 +16,15 @@ export class FoodDetailComponent implements OnInit {
   usage: FoodUsage;
 
   id: number;
-  id_string: string;
 
   constructor(
     private foodService: FoodService,
     private route: ActivatedRoute,
-    private location: Location) {
+    private location: Location,
+    private router: Router) {
+      this.router.routeReuseStrategy.shouldReuseRoute = () => false;
       this.route.paramMap.subscribe(params => {
-        this.id_string = params.get('id'); });
+        this.id = +params.get('id'); });
     }
 
   ngOnInit() {
@@ -31,12 +32,9 @@ export class FoodDetailComponent implements OnInit {
   }
 
   async init() {
-    console.log(this.id);
     await this.getFood(this.id);
     await this.getUsages(this.id);
-    console.log(this.usages);
     this.usage = this.usages[0];
-    console.log(this.usage);
   }
 
   getFood(id: number) {
@@ -47,6 +45,16 @@ export class FoodDetailComponent implements OnInit {
   getUsages(id: number) {
     return new Promise(resolve => {this.foodService.getFoodUsage(id).subscribe((u) =>
       { this.usages = u; resolve(); }); });
+  }
+
+  public next() {
+    this.id++;
+    this.router.navigateByUrl(`/foodDetail/${this.id}`);
+  }
+
+  public prev() {
+    this.id--;
+    this.router.navigateByUrl(`/foodDetail/${this.id}`);
   }
 
   public goBack() {

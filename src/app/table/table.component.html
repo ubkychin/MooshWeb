@@ -1,8 +1,12 @@
-<div class="form-group form-inline">
-  Full text search: <input class="form-control ml-2" type="text" name="searchTerm" [(ngModel)]="searchTerm" (keyup)="search()"/>
-</div>
+<div class="row">
 
-<div class="overflow-auto" style="max-height: 500px">
+  <div class="col-12 form-group">
+    <span class="float-md-right form-inline">Full text search: <input class="form-control ml-2" type="text" name="searchTerm" [(ngModel)]="searchTerm" (keyup)="search()"/>
+    </span>
+  </div>
+
+
+<div class="container overflow-auto" style="max-height: 500px">
 <table class="table table-striped">
   <thead>
   <tr><th *ngFor="let header of tableHeaders" scope="col" [sortable]="header" (sort)="onSort($event)">{{header}}</th></tr>
@@ -17,14 +21,18 @@
 </table>
 </div>
 
-<div class="d-flex justify-content-between p-2">
-  <ngb-pagination [collectionSize]="collectionSize" [(page)]="page" [(pageSize)]="pageSize">
-  </ngb-pagination>
+<div class="col-12">
+  <div class="float-md-left">
+    <ngb-pagination [collectionSize]="collectionSize" [(page)]="page" [(pageSize)]="pageSize">
+    </ngb-pagination>
+  </div>
 
-  <select class="custom-select" style="width: auto" [(ngModel)]="pageSize">
-    <option [ngValue]="5">5 items per page</option>
-    <option [ngValue]="10">10 items per page</option>
-    <option [ngValue]="15">15 items per page</option>
-  </select>
-
+  <div class="float-md-right">
+    <select class="custom-select" style="width: auto" [(ngModel)]="pageSize">
+      <option [ngValue]="5">5 items per page</option>
+      <option [ngValue]="10">10 items per page</option>
+      <option [ngValue]="15">15 items per page</option>
+    </select>
+  </div>
+</div>
 </div>

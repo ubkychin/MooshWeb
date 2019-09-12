@@ -1,5 +1,5 @@
-<div *ngIf="food && usage">
-  <table class = "table table-striped">
+<div >
+  <table class = "table table-striped col-6 text-left">
     <thead>
       <th><h1>{{food.name}}</h1></th>
     </thead>
@@ -15,4 +15,21 @@
   </table>
 </div>
 
-<button (click) = "goBack();">Back</button><button [routerLink]="['/foodDetail/10']">Next</button>
+<div class = "row">
+  <div class="justify-content-between col-6">
+    <span class="float-md-left">
+      <button class="btn-sm btn-primary" (click) = "prev();">Prev</button>
+    </span>
+    <span class="float-md-right">
+      <button class="btn-sm btn-primary" (click) = "next();">Next</button>
+  </span>
+  </div>
+</div>
+
+<div class="row">
+  <div class="justify-content-start">
+    <div class="col-1">
+    <button class="btn-sm btn-primary" (click) = "goBack();">List</button>
+  </div>
+  </div>
+</div>
