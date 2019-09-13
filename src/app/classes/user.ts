@@ -7,6 +7,6 @@ export class User {
 }
 
 export class UserFoods {
-  id: string;
-  foods: Food[];
+  userId: string;
+  food: Food[];
 }

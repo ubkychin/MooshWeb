@@ -3,7 +3,6 @@ import { Food, FoodUsage } from '../classes/food';
 import { FoodService } from '../food.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Location, DecimalPipe } from '@angular/common';
-import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-food-detail',
@@ -14,6 +13,7 @@ export class FoodDetailComponent implements OnInit {
   usages: FoodUsage[];
   food: Food;
   usage: FoodUsage;
+  imageLocation: string;
 
   id: number;
 
@@ -35,6 +35,12 @@ export class FoodDetailComponent implements OnInit {
     await this.getFood(this.id);
     await this.getUsages(this.id);
     this.usage = this.usages[0];
+    this.setImageLocation();
+  }
+
+  setImageLocation() {
+    const foodName = this.food.name.toLowerCase()[0].toUpperCase().concat(this.food.name.substr(1));
+    this.imageLocation = `assets/svg/${this.id}_${foodName}.svg`;
   }
 
   getFood(id: number) {
@@ -57,8 +63,12 @@ export class FoodDetailComponent implements OnInit {
     this.router.navigateByUrl(`/foodDetail/${this.id}`);
   }
 
-  public goBack() {
+  public goList() {
     this.router.navigateByUrl('/foods');
+  }
+
+  public goBack() {
+    this.location.back();
   }
 
 }

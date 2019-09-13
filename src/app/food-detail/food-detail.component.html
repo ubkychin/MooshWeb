@@ -1,7 +1,7 @@
-<div >
+<div *ngIf="usage">
   <table class = "table table-striped col-6 text-left">
     <thead>
-      <th><h1>{{food.name}}</h1></th>
+      <th><h1><img [src]="imageLocation">{{food.name}}</h1></th>
     </thead>
     <tbody>
     <tr><th>Id: </th><td>{{food.id}}</td></tr>
@@ -27,9 +27,12 @@
 </div>
 
 <div class="row">
-  <div class="justify-content-start">
-    <div class="col-1">
-    <button class="btn-sm btn-primary" (click) = "goBack();">List</button>
-  </div>
+  <div class="justify-content-between col-6">
+    <span class="float-md-left">
+    <button class="btn-sm btn-primary" (click) = "goBack();">Back</button>
+    </span>    <span class="float-md-right">
+        <button class="btn-sm btn-primary" (click) = "goList();">Food List</button>
+        </span>
   </div>
 </div>
+

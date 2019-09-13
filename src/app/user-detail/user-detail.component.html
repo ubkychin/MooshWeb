@@ -1,1 +1,15 @@
-<p>user-detail works!</p>
+<div *ngIf="userFoods">
+<h1>{{userFoods.userId}}</h1>
+<hr />
+  <div class="container">
+      <app-table [detail]="detailComponent" [objects]="userFoods.food" [tableHeaders]=""></app-table>
+    </div>
+</div>
+
+<div class="row">
+    <div class="justify-content-start">
+      <div class="col-4">
+      <button class="btn-sm btn-primary" (click) = "goBack();">Back to Users</button>
+    </div>
+    </div>
+  </div>

@@ -112,13 +112,11 @@ export class TableComponent implements OnInit {
     this.getHeaders();
     this.collectionSize = this.objects.length;
     this.displayObjects = this.objects;
-    console.log(this.tableHeaders);
   }
 
   getHeaders() {
     if (this.objects.length) {
       this.tableHeaders = Object.keys(this.objects[0]);
-      console.log(this.tableHeaders);
     }
   }
 
@@ -127,8 +125,6 @@ export class TableComponent implements OnInit {
     while (node.nodeName !== 'TR') {
       node = node.parentNode;
     }
-
-    console.log(node.title);
   }
 
 }

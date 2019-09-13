@@ -21,7 +21,7 @@ export class FoodsComponent implements OnInit {
   collectionSize = -1;
 
 
-  public chartMinQty = 1;
+  public chartMinQty = 20;
   public chartOption = 'cooked';
   public doughnutChartLabels = [];
   public doughnutChartData = [1, 1, 1, 1, 1, 1, 1, 1, 1,  1, 1 , 1, 1, 1];
