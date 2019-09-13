@@ -1,5 +1,6 @@
 
-  <div class="container" style="max-height: 450px">
+ <div class="row">
+ <div class="container">
     <!-- <div class="col">
       <canvas baseChart
                   [data]="doughnutChartData"
@@ -8,7 +9,6 @@
                   [options] = "doughnutChartOptions">
       </canvas>
     </div> -->
-  <div class="col">
     <canvas baseChart
               [datasets]="barChartData"
               [labels]="barChartLabels"
@@ -16,12 +16,14 @@
               [options] = "barChartOptions"
               [colors] ="barChartColours">
     </canvas>
+
   </div>
-  </div>
+</div>
 
 
 <br />
 
+<div class="row">
 <div class="col-12">
   <!-- <span class="float-md-left">
     <button class="btn btn-primary" (click) = "toggleOption()">Show {{chartOption === 'selected' ? 'cooked' : 'selected'}} Foods</button>
@@ -31,6 +33,8 @@
   </span>
 
 </div>
+</div>
+
 
 <div class="container">
   <app-table [detail]="detailComponent" [objects]="foodUsages" [tableHeaders]="headers"></app-table>
