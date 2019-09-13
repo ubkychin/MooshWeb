@@ -58,7 +58,7 @@ export class FoodDetailComponent implements OnInit {
   }
 
   public goBack() {
-    this.location.back();
+    this.router.navigateByUrl('/foods');
   }
 
 }

@@ -1,13 +1,13 @@
-<div class="container">
-  <div class="row">
-    <div class="col">
+
+  <div class="container" style="max-height: 450px">
+    <!-- <div class="col">
       <canvas baseChart
                   [data]="doughnutChartData"
                   [labels]="doughnutChartLabels"
                   [chartType]="doughnutChartType"
                   [options] = "doughnutChartOptions">
       </canvas>
-    </div>
+    </div> -->
   <div class="col">
     <canvas baseChart
               [datasets]="barChartData"
@@ -18,15 +18,15 @@
     </canvas>
   </div>
   </div>
-</div>
+
 
 <br />
 
 <div class="col-12">
-  <span class="float-md-left">
+  <!-- <span class="float-md-left">
     <button class="btn btn-primary" (click) = "toggleOption()">Show {{chartOption === 'selected' ? 'cooked' : 'selected'}} Foods</button>
-  </span>
-  <span class="float-md-right">
+  </span> -->
+  <span class="float-md-left">
     <label>Min Quantity to Chart<input [(ngModel)]="chartMinQty" placeholder="minQty" (change)="minQtyChange()"></label>
   </span>
 
